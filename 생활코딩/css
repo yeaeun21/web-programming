@@ -1,0 +1,97 @@
+<font color=”red”></font>
+코딩은 중복제거가 중요.
+
+style이라는 속성을 쓰면 css라는 것
+
+```html
+<style>
+	a{ #효과를 누구에게 줄지 선택(선택자,selector)
+		**color**(property)**:black**(value)**;** -->declaration
+		#여러가지 효과를 넣을 수 있는데 각 효과들 작성 후에 끝에 구분을 위해;적어야함
+		**text-decoration: underline** #밑줄
+		}
+</style>
+```
+
+#문제 해결법
+:예를들어 글자를 크게하고 싶다. 일 때 검색어
+*css text size property* 이런식으로 찾을 수 있음
+—>font-size:45px; 임을 알 수 있음
+
+가운데 정렬을 하고싶다
+검색어: *css text center(align) property*
+—>text-align:certer;
+
+class=”saw”면
+스타일태그 안에 .saw{ 내용 } 로 활용할 수 잇음
+
+우선순위를 높이는 방법은 id를 활용.
+id=”active”를 html코드에 써주고
+css에 #active{내용} 을 써주면 우선순위가 높아진다. id값은 유일하기 때문에 더 포괄적인거 보다 유일한 것을 먼저.
+
+개발자도구로 마진,패딩등을 확인하면서 개발할 수 있따
+
+grid로 화면 구성
+<div>로 묶고 id값을 grid로 준 후 스타일태그안에
+
+```html
+#grid {
+	border:5px; solid pink;
+	display:grid;
+	grid-template-columns: 150px 1fr; #div태그안에 있는 첫 번째 열은 150px로 고정되고 나머지공간에 두번째 열생김
+}
+```
+
+**can I use.com**에서 css에서 그리드 등 사용할 수 있는지 확인할 수 있는 사이트
+
+<반응형 디자인>
+화면의 크기에 따라 다른 디자인을 하고 싶을 때
+
+```html
+<style>
+	div{
+		border:10px solid green;
+		font-size:60px;
+			}
+</style>
+<div>
+	responsive
+</div>
+```
+
+화면의 크기는 **개발자도구의 검사**를 누르면 위에 화면크기가 보임.
+스타일태그의 div{}밑에 작성(*화면이 800px이상 커지면 사라지는 코드*)
+
+```html
+screen width > 800px
+@media(min-width:800px) 최소 800픽셀{
+	div{
+		display:none;
+		}
+}
+```
+
+*스크린이 800보다 작으면 구분선 사라지고 일렬로 배치*
+
+```html
+@media(max-width:800px){
+	#grid{
+		display: block;
+	}
+	ol{
+		borde-right:none;
+	}
+	h1{
+		border-bottom:none;
+	}
+}
+```
+
+하나의 페이지 코드를 수정하면 모두 수정해야할 것. 중복되니까
+
+어떤 스타일태그와 연결되어 있는지를 알 수 있게하는 코드
+
+css 코드(스타일태그)만 별도의 css파일로 뺌
+뺀부분에 “원래 css가 잇었던것처럼 동작해”라는 뜻의 코드
+**—><link rel=”stylesheet” href=”style=”style.css(css파일 이름)”>**
+이렇게 하게 되면 네트워크는style.css를 따로 다운로드 하게됨. 해결방법있음

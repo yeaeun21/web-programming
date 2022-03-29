@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script> #이 태그는 javascript가 들어갈 것이라는 것
+            document.write('hello world')
+        </script>
+        <h1>html</h1>
+        hello world #위의 자바스크립트와 뭐가 다르냐면 html은 정적이고 자바스크립트는 동적이다.
+        예를들어 html코드에 1+1을 작성하면 영원히 1+1이 출력되지만 
+        자바스트립트는 2가 출력될 것이다. 
+    </body>
+</html>
+
+
+<event>
+onclick,onchange 등..
+
+버튼 만들기
+<input type="button" value="hi">
+경고창 만들기
+<input type="button" value="hi" onclick="alert('hi')">
+onclick속성은 무조건 자바스크립트가 와야함. 자바스크립트 문법에 따라 동작
+
+텍스트창에 값이 변했을 때 change를 실행
+<input type="text" onchange="alert('change')">
+
+키를 눌러서 작성하였을 때 event
+검색어: javascript keydown event attribute
+<input type="text" onkeydown="alert('keydown!')">
+
+<자바스트립트를 실행하는 다른 방법=콘솔>
+원래는 파일을 만들었음
+(크롬)우클릭>검사>콘솔
+콘솔창에서 문자열 개수 계산 가능
+alert('문자열'.length)이런식으로 활용가능
+
+예를들어
+페이스북에서 약1000명의 댓글중에 랜덤으로 2명 뽑아야하는 상황
+우클릭>검사>elements>esc키 누르면 콘솔이 밑에 뜸
+이상태에서 랜덤추출 코드를 콘솔창에 넣고 실행하면 추출됨
+
+<데이터 타입(자료형) 파악>
+javascript data type검색
+-Boolean
+-Null
+-Underfined
+-Number
+-String
+-Symbol (new in ECMAScript 6)
+
+javascript string 검색> mdn-mozilla> 왼쪽 탭> 여러가지 메소드를 알 수 있음
+
+-------css언어로 디자인하는 법
+<h1 style="background-color:coral; color:powderblue">hello world</h1>
+
+문자열중에 특정 단어들만 강조하는법
+<div></div>는 어떠한 의미도 기능도 없음. 정보 제어를 위해 묶어주는역할 하지만 화면 전체를 쓰기때문에 줄바꿈 됨
+<span></span>은 div와 같은 용도지만 줄바꿈되지 않음
+
+<span style="font-weight: bold;">진하게</span>
+문서의 모든 '진하게'에 적용하고싶으면 ctrl+f로 해당 글자를 찾아서 대체
+but 해당 단어가 1억개라면 불가능. 
+<span style="font-weight: bold;">진하게</span>
+을 <span class="js"></span>로 변경후
+<head>
+    <style>
+        .js{
+            font-weight: bold;
+            color:red;
+        }
+    </style>
+</head>
+위와같이 여러개의 태그를 한번에 표현가능
+
+<head>
+    <style>
+        .js{
+            font-weight: bold;
+            color:red;
+        }
+        #first{
+            color:green;
+        }
+    </style>
+</head>
+
+
+<span id="first" class="js">hello world</span>
+위의 경우 초록색으로 출력됨. class가 더 포괄적이므로 id가 우선순위가 더 높음
+class에 id속성을 얹어서 표현하는게 쉬워서 탄생함
+-----css
+<javascript로 night,day버튼 만들기/ 제어할 태그 선택하기>
+
+<input type="botton" value="night" onclick="
+(javascript select tag by css selector검색)
+document.querySelector(css의 selecter)
+-->document.querySelector('body(태그이름)')
+<body style="">에서 style=""부분을 어떻게 자바스크립트로 넣을 수 있는지 검색
+javascript element(태그) style 로 검색
+-->document.querySelector('body(태그이름)').style
+<body style="background-color:black">을 하고싶음
+javascript style background-color 검색
+-->document.querySelector('body(태그이름)').style.background='black';
++  document.querySelector('body').style.color='white';
+">
+
+<input type="botton" value="day" onclick="
+document.querySelector('body').style.background='white';
+document.querySelector('body').style.color='black';
+">
+
+--12

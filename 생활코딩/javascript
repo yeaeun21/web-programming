@@ -112,4 +112,6 @@ document.querySelector('body').style.background='white';
 document.querySelector('body').style.color='black';
 ">
 
---12
+<프로그램,프로그래밍,프로그래머>
+
+javascript는 컴퓨터언어이자 프로그램언어 html은 컴퓨터언어이지만 프로그램언어는 아님

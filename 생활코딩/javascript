@@ -1,120 +1,176 @@
+```html
 <!DOCTYPE html>
+
 <html>
-    <head>
-        <title></title>
-    </head>
-    <body>
-        <script> #이 태그는 javascript가 들어갈 것이라는 것
-            document.write('hello world')
-        </script>
-        <h1>html</h1>
-        hello world #위의 자바스크립트와 뭐가 다르냐면 html은 정적이고 자바스크립트는 동적이다.
-        예를들어 html코드에 1+1을 작성하면 영원히 1+1이 출력되지만 
-        자바스트립트는 2가 출력될 것이다. 
-    </body>
-</html>
+	<head>
+		<title></title>
+	</head>
+<body>
+	<script> #이 태그는 javascript가 들어갈 것이라는 것
+		document.write('hello world')
+	</script>
+</body>
+```
 
+**<document.write('hello world') 와 html의 hello world의 차이점>**
 
-<event>
+html은 정적이고 자바스크립트는 동적이다.
+
+예를들어 html코드에 1+1을 작성하면 영원히 1+1이 출력되지만 자바스트립트는 2가 출력된다.
+
+**<event>**
+
 onclick,onchange 등..
 
 버튼 만들기
+
 <input type="button" value="hi">
+
 경고창 만들기
+
 <input type="button" value="hi" onclick="alert('hi')">
+
 onclick속성은 무조건 자바스크립트가 와야함. 자바스크립트 문법에 따라 동작
 
 텍스트창에 값이 변했을 때 change를 실행
+
 <input type="text" onchange="alert('change')">
 
 키를 눌러서 작성하였을 때 event
+
 검색어: javascript keydown event attribute
+
 <input type="text" onkeydown="alert('keydown!')">
 
-<자바스트립트를 실행하는 다른 방법=콘솔>
+**<자바스트립트를 실행하는 다른 방법=콘솔>**
+
 원래는 파일을 만들었음
+
 (크롬)우클릭>검사>콘솔
+
 콘솔창에서 문자열 개수 계산 가능
+
 alert('문자열'.length)이런식으로 활용가능
 
-예를들어
+(예를들어)
+
 페이스북에서 약1000명의 댓글중에 랜덤으로 2명 뽑아야하는 상황
+
 우클릭>검사>elements>esc키 누르면 콘솔이 밑에 뜸
+
 이상태에서 랜덤추출 코드를 콘솔창에 넣고 실행하면 추출됨
 
-<데이터 타입(자료형) 파악>
+**<데이터 타입(자료형) 파악>**
+
 javascript data type검색
--Boolean
--Null
--Underfined
--Number
--String
--Symbol (new in ECMAScript 6)
+
+- Boolean
+- Null
+- Underfined
+- Number
+- String
+- Symbol (new in ECMAScript 6)
 
 javascript string 검색> mdn-mozilla> 왼쪽 탭> 여러가지 메소드를 알 수 있음
 
--------css언어로 디자인하는 법
+---
+
+#css언어로 디자인하는 법
+
 <h1 style="background-color:coral; color:powderblue">hello world</h1>
 
 문자열중에 특정 단어들만 강조하는법
+
 <div></div>는 어떠한 의미도 기능도 없음. 정보 제어를 위해 묶어주는역할 하지만 화면 전체를 쓰기때문에 줄바꿈 됨
+
 <span></span>은 div와 같은 용도지만 줄바꿈되지 않음
 
 <span style="font-weight: bold;">진하게</span>
+
 문서의 모든 '진하게'에 적용하고싶으면 ctrl+f로 해당 글자를 찾아서 대체
-but 해당 단어가 1억개라면 불가능. 
+
+but 해당 단어가 1억개라면 불가능.
+
 <span style="font-weight: bold;">진하게</span>
+
 을 <span class="js"></span>로 변경후
+
+```html
 <head>
-    <style>
-        .js{
-            font-weight: bold;
-            color:red;
-        }
-    </style>
+	<style>
+		.js{
+				font-weight: bold;
+				color:red;
+			}
+</style>
 </head>
+```
+
 위와같이 여러개의 태그를 한번에 표현가능
 
+```html
 <head>
-    <style>
-        .js{
-            font-weight: bold;
-            color:red;
-        }
-        #first{
-            color:green;
-        }
-    </style>
+	<style>
+		.js{
+				font-weight: bold;
+				color:red;
+				}
+		#first{
+			color:green;
+		}
+	</style>
 </head>
-
+```
 
 <span id="first" class="js">hello world</span>
-위의 경우 초록색으로 출력됨. class가 더 포괄적이므로 id가 우선순위가 더 높음
-class에 id속성을 얹어서 표현하는게 쉬워서 탄생함
------css
-<javascript로 night,day버튼 만들기/ 제어할 태그 선택하기>
 
-<input type="botton" value="night" onclick="
-(javascript select tag by css selector검색)
+위의 경우 초록색으로 출력됨. class가 더 포괄적이므로 id가 우선순위가 더 높음
+
+class에 id속성을 얹어서 표현하는게 쉬워서 탄생함
+
+---
+
+**<javascript로 night,day버튼 만들기/ 제어할 태그 선택하기>**
+
+**<input type="botton" value="night" onclick="**
+
+javascript select tag by css selector검색
+
 document.querySelector(css의 selecter)
--->document.querySelector('body(태그이름)')
+
+—>document.querySelector('body(태그이름)')
+
 <body style="">에서 style=""부분을 어떻게 자바스크립트로 넣을 수 있는지 검색
+
 javascript element(태그) style 로 검색
--->document.querySelector('body(태그이름)').style
+
+—>document.querySelector('body(태그이름)').style
+
 <body style="background-color:black">을 하고싶음
+
 javascript style background-color 검색
--->document.querySelector('body(태그이름)').style.background='black';
-+  document.querySelector('body').style.color='white';
-">
+
+—>**document.querySelector('body**(태그이름)**').style.background='black';**
+
+**+  document.querySelector('body').style.color='white';**
+
+**">**
 
 <input type="botton" value="day" onclick="
+
 document.querySelector('body').style.background='white';
+
 document.querySelector('body').style.color='black';
+
 ">
 
 <프로그램,프로그래밍,프로그래머>
 
 javascript는 컴퓨터언어이자 프로그램언어 html은 컴퓨터언어이지만 프로그램언어는 아님
+
+다음에 실습 해볼 것///참고자료
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/451ea709-7b4d-4782-bd83-9c78c057ee63/Untitled.png)
 
 <리팩토링>
 
@@ -143,3 +199,51 @@ document.querySelectorAll(’a’)
 <함수>
 
 함수를 사용하면 반복을 줄일 수 있고 태그안에 조금 긴 코드가 중복될 때 그게 중복인지 아닌지 파악하기 힘들게 되는데 적절한 함수명을 가진 함수를 생성해서 적용하면 중복 파악이 용이해짐
+
+*지역,전역 신경쓸 것
+
+<객체>
+
+//함수 이름은 예를들어 color면 bodycolor,linkcolor이런식으로 중복되지 않게 붙여줌
+
+객체:서로 연관된 함수와 서로 연관된 변수를 그룹핑해서 정리정돈하는 수납상자 
+
+BodysetColor —> Body.setColor이런식으로 정리 가능
+
+//배열-정보를 담는 그릇이자 순서대로 정보가 저장됨순서가 없이 저장되는 게 객체 하지만 무작위로 넣을  순 없고 이름이 있는 정리정돈 상자
+
+객체는 {} 배열은[]
+
+```jsx
+//객체 생성 법
+<script>
+	var coworkers={
+		"programmer":"egoing",
+		"designer":"leezche"
+	}; 
+//객체 사용법
+	document.write("programmer:"+coworker.programmer+"<br>");
+	document.write("designer:"+coworker.designer+"<br>");
+//객체 넣는법
+	cowerkers.bookeeper="duru";
+	document.write("bookeeper:"+coworker.bookeeper+"<br>");
+	coworkers["data scientist"]="taeho"; //(공백이 있는 변수)
+	document.write("data scientist:"+coworker.data["data scientist"]+"<br>");
+</script>
+```
+
+js코드를 따로 파일로 만들어 빼고 src를통해 표시할 수 있다
+
+<라이브러리와 프레임워크>
+
+다른사람의 도움을 받아 sw를 만든다
+
+라이브러리- 내가 만들고자 하는 프로그램의 부품을 가져옴
+
+프레임- 만들고자하는 것이 무엇이냐에 따라 공통부분과 달라지는 부분이 있는데 공통부분은 프레임 달라지는건 수정 처음부터 끝까지 만들지 않아도 되게
+
+라이브러리는 자재랑 가구등 집에 필요한 재료이고
+프레임워크는 이미 집의 수도나 뼈대같은 기본적인 구조들이 있어서, 입맛대로 꾸미기만 하면
+되는 것
+
+라이브러리-jQuery /생산성이 높아짐

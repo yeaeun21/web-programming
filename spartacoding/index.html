@@ -53,9 +53,17 @@
 
     </style>
     <script>
+        let count=1;
         function hey() {
-            alert("안녕");
+            if (count %2==0){
+                alert('짝수')
+            }
+            else{
+                alert('홀수')
+            }
+            count+=1;
         }
+        //함수안에 (전역변수) 사용시 함수 끝나면 변수가 사라짐. 다시 초기화
     </script>
 </head>
 
@@ -152,13 +160,3 @@
 
 </html>
 
-
-<!-- let people = ['철수','영희','민수','형준','기남','동희']
-let scores = [
-	{'name':'철수', 'score':90},
-	{'name':'영희', 'score':85},
-	{'name':'민수', 'score':70},
-  {'name':'형준', 'score':50},
-  {'name':'기남', 'score':68},
-  {'name':'동희', 'score':30},
-] -->

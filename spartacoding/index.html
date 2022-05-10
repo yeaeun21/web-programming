@@ -53,9 +53,17 @@
 
     </style>
     <script>
+        let count=1;
         function hey() {
-            alert("안녕");
+            if (count %2==0){
+                alert('짝수')
+            }
+            else{
+                alert('홀수')
+            }
+            count+=1;
         }
+        //함수안에 (전역변수) 사용시 함수 끝나면 변수가 사라짐. 다시 초기화
     </script>
 </head>
 
@@ -67,13 +75,13 @@
         <p class="lead">중요한 링크를 저장해두고, 나중에 볼 수 있는 공간입니다</p>
         <hr class="my-4">
         <p class="lead">
-            <a onclick="hey()" class="btn btn-primary btn-lg" href="#" role="button">포스팅박스 열기</a>
+            <a onclick="hey()" id="btn-posting-box" class="btn btn-primary btn-lg" href="#" role="button">포스팅박스 열기</a>
         </p>
     </div>
-    <form class="form_box">
+    <form class="form_box" id="post-box">
         <div class="form-group">
-            <label for="exampleInputEmail1">아티클 URL</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <label>아티클 URL</label>
+            <input type="email" class="form-control" id="article-url" aria-describedby="emailHelp">
         </div>
         <div class="form-group">
             <label for="exampleFormControlTextarea1">간단 코멘트</label>
@@ -152,13 +160,3 @@
 
 </html>
 
-
-<!-- let people = ['철수','영희','민수','형준','기남','동희']
-let scores = [
-	{'name':'철수', 'score':90},
-	{'name':'영희', 'score':85},
-	{'name':'민수', 'score':70},
-  {'name':'형준', 'score':50},
-  {'name':'기남', 'score':68},
-  {'name':'동희', 'score':30},
-] -->

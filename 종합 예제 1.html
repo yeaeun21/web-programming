@@ -2,74 +2,118 @@
 <html>
     <head>
         <title>종합 예제 1</title>
+        <style>
+            *{
+                margin:0; padding:0;
+                font-family: '맑은 고딕','Malgun Gothic',Gothic, sans-serif;
+            }
+            a{
+                text-decoration: none;
+            }
+            li{
+                list-style:none;
+            }
+            body{width:960px;
+                margin:0 auto; background: #E6E6E6;}
+            #page-wrapper{
+                background-color: white;
+                margin: 40px 0; padding: 10px 20px;
+                border-radius: 5px;
+                box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+            }
+            #main-header {padding: 40px 50px;}
+            .master-title{
+                font-size: 30px;
+                color: #181818;
+            }
+            .master-description{
+                font-size: 15px; font-weight: 500;
+                color: #383838;
+            }
+            #main-navigation{
+                border-top: 1px solid #C8C8C8;
+                border-bottom: 1px solid #C8C8C8;
+                margin-bottom: 20px;
+                height: 40px;
+            }
+
+        </style>
     </head>
     <body>
-        <h1>HTML5 Example Preview</h1>
-        <header>
-            <h2>한빛아카데미</h2>
-        </header>
-        <nav>
-            <ul>
-                <li>HTML5</li>
-                <ul>
-                    <li><a href="#">데이터</a></li>
-                    <li><a href="#">데이터</a></li>
-                </ul>
+        <div id="page-wrapper">
+            <div  id="main-navigation" >
+            <div  id="main-header">
+                
+                <h1 class="master-title">HTML5 Example Preview</h1>
+                <header>
+                    <h2 class="master-description">한빛아카데미</h2>
+                </header>
+            </div>
+            <nav>
+                <ul> 
+                    <li>HTML5</li>
+                    <ul>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                    </ul>
 
-                <li>CSS3</li>
-                <ul>
-                    <li><a href="#">데이터</a></li>
-                    <li><a href="#">데이터</a></li>
-                    <li><a href="#">데이터</a></li>
-                </ul>
+                    <li>CSS3</li>
+                    <ul>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                    </ul>
 
-                <li>JavaScript</li>
-                <ul>
-                    <li><a href="#">데이터</a></li>
-                    <li><a href="#">데이터</a></li>
-                    <li><a href="#">데이터</a></li>
-                    <li><a href="#">데이터</a></li>
-                    <li><a href="#">데이터</a></li>
-                    <li><a href="#">데이터</a></li>
-                    <li><a href="#">데이터</a></li>
-                    <li><a href="#">데이터</a></li>
+                    <li>JavaScript</li>
+                    <ul>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                    </ul>
                 </ul>
-            </ul>
-        </nav>
-        <input type="text"> <input type="button" value="검색">
-        <section>
-            <article>
-                <h1>HTML5 개요와 활용</h1>
-                <P>2013년 02월 14일</p>
-                <p><input type="image" src="http://via.placeholder.com/430x280"></p><br>    
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Suspendisse dui massa, vestibulum accumsan blandit a, 
-                    tincidunt at lorem. Integer dapibus eros ac elit volutpat, 
-                    ut vestibulum ligula feugiat. 
-                    Sed non ante in justo tristique semper at at est. Proin enim risus, 
-                    viverra eu volutpat sed, dapibus at eros. 
-                    Curabitur interdum elit sagittis, mattis neque commodo, rutrum neque.
-                     In vitae urna ligula. Nulla viverra tempor nibh vitae placerat. 
-                     Donec posuere dui arcu, quis tincidunt orci iaculis eget.
-                      Nulla laoreet molestie ante in euismod.</p><br>
-                 <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; 
-                      Quisque rhoncus nibh lorem, vitae hendrerit arcu accumsan at. 
-                      Mauris eleifend diam quis luctus congue. In commodo purus ut lectus gravida, sed consectetur felis vestibulum. 
-                    Praesent eu dapibus arcu, pretium dapibus ex.
-                </P>
-            </article>
-            <article>
-                <h1>HTML5 응용과 실습</h1>
-                <P>
-                    Proin vel lacus eget enim sollicitudin faucibus vitae eget augue. 
-                    Duis lacinia elit erat, at blandit quam porttitor in. 
-                    Aliquam diam elit, elementum sed mi at, rutrum varius dolor. 
-                    Duis tempor gravida felis non bibendum. Morbi et tincidunt lectus. 
-                    Morbi dapibus mi quis leo fringilla feugiat. Proin varius, 
-                    ligula at condimentum pellentesque, 
-                    enim ligula convallis tortor, at hendrerit elit ipsum nec massa.
-                </P>
-            </article>
-        </section>
+            </div>
+            </nav>
+            <input type="text"> <input type="button" value="검색">
+            <section>
+                <article>
+                    <h1>HTML5 개요와 활용</h1>
+                    <P>2013년 02월 14일</p>
+                    <p><input type="image" src="http://via.placeholder.com/430x280"></p><br>    
+                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Suspendisse dui massa, vestibulum accumsan blandit a, 
+                        tincidunt at lorem. Integer dapibus eros ac elit volutpat, 
+                        ut vestibulum ligula feugiat. 
+                        Sed non ante in justo tristique semper at at est. Proin enim risus, 
+                        viverra eu volutpat sed, dapibus at eros. 
+                        Curabitur interdum elit sagittis, mattis neque commodo, rutrum neque.
+                        In vitae urna ligula. Nulla viverra tempor nibh vitae placerat. 
+                        Donec posuere dui arcu, quis tincidunt orci iaculis eget.
+                        Nulla laoreet molestie ante in euismod.</p><br>
+                    <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; 
+                        Quisque rhoncus nibh lorem, vitae hendrerit arcu accumsan at. 
+                        Mauris eleifend diam quis luctus congue. In commodo purus ut lectus gravida, sed consectetur felis vestibulum. 
+                        Praesent eu dapibus arcu, pretium dapibus ex.
+                    </P>
+                </article>
+                <article>
+                    <h1>HTML5 응용과 실습</h1>
+                    <P>
+                        Proin vel lacus eget enim sollicitudin faucibus vitae eget augue. 
+                        Duis lacinia elit erat, at blandit quam porttitor in. 
+                        Aliquam diam elit, elementum sed mi at, rutrum varius dolor. 
+                        Duis tempor gravida felis non bibendum. Morbi et tincidunt lectus. 
+                        Morbi dapibus mi quis leo fringilla feugiat. Proin varius, 
+                        ligula at condimentum pellentesque, 
+                        enim ligula convallis tortor, at hendrerit elit ipsum nec massa.
+                    </P>
+                </article>
+            </section>
+        
+    </div>
     </body>
 </html>

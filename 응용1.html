@@ -6,7 +6,8 @@
         window.onload=function() {
             var button = document.getElementById('button');
             button.onclick=function () {
-                alert('click');
+                alert(button.innerHTML);
+                button.innerHTML="click하였습니다"
             };
         };
     </script>

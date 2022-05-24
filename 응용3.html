@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Basic</title>
+    <script src="http://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('img').attr({
+                alt: 'jQuery 라이브러리를 사용한 속성 지정',
+                src: function (index){
+                    if (index==0|index==1){
+                        return 'http://via.placeholder.com/100x100';}
+                    else {
+                            return 'http://via.placeholder.com/300x100';
+                        }
+                    }
+            });
+        });
+    </script>
+</head>
+<body>
+   <img>
+   <img>
+   <img>
+   <img>
+</body>
+</html>

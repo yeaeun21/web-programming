@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+        #box{
+            width:100px; height:100px;
+            background-color: red;
+        }
+        #box.hover{ /*.hover일 경우 선택자 우선순위에 의해 red로 선택됨 */
+            background-color: blue;
+            border-radius: 50px;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#box').hover(function(){
+                $('#box').addClass('hover');
+        }, function(){
+            $('#box').removeClass('hover');
+        });
+        });
+    </script>
+
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>

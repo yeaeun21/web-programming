@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>문제2</title>
+    <script src="http://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            firstDiv=$('div').html();
+            alert(firstDiv+" 두번째 div에 copy하겠습니다.");
+            $('div').text(firstDiv);
+          
+        });
+    </script>
+</head>
+<body>
+    <div>첫번째 div입니다.</div>
+    <div></div>
+  
+</body>
+</html>

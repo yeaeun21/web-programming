@@ -9,9 +9,16 @@
                 height:100,
                 background:'orange'
             }).on('click',function(){
-                $(this).css('background')
-            })
-        })
+                $(this).css('background','red');
+            }).on('mouseenter',function(){
+                $(this).css('background','blue');
+            }).on('mouseleave',function(){
+                $(this).css('background','orange');
+            });
+        });
     </script>
 </head>
+<body>
+    <div id="box"></div>
+</body>
 </html>

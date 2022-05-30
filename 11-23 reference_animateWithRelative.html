@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animate Basic</title>
+    <script src="http://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#box').css({
+                width:100,
+                height:100,
+                background:'red',
+                position: 'absolute',
+                left:10,
+                top:10
+            }).animate({
+               height: '+=300',
+               width:'-=50',
+               left:'+=300',
+               opacity:0.5 //요소를 투명하게 만드는 속성
+            },500);
+        });
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>

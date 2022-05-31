@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-3.1.0.js"></script>
+    <style type="text/css">
+        .css_test {
+            text-align : center;
+        }
+        .css_test img {
+            border-radius : 0;
+            margin-bottom : 10px;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $('img').on('mouseenter',function(){
+                $(this).animate({
+                    borderRadius:'100px'
+                });
+            }).on('mouseleave',function(){
+                $(this).animate({
+                    borderRadius:''
+                });
+            });
+    });
+    </script>
+    
+</head>
+<body>
+    <div class="css_test">
+        물컹 물컹 이미지 : 마우스를 올려보세요.<br>
+        jQuery UI 의 움직임 효과를 추가로 사용하였습니다.<br>
+        <img name="j_test" src="https://t1.daumcdn.net/cfile/tistory/25150D38550B923D32" /><br>
+        <img name="j_test" src="https://t1.daumcdn.net/cfile/tistory/2264874654D5A16A32" /><br>
+    </div>
+
+    <script type="text/javascript">
+       
+
+
+    </script>
+    
+</body>
+</html>
+
+
+
+

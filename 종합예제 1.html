@@ -1,8 +1,8 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>HTML5 Basic Page</title>
-    <!-- 초기화 -->
+    <title>YEAEUN Page</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <style>
         * { 
             margin: 0; padding: 0;
@@ -187,7 +187,15 @@
             color: #6C6C6C;
         }
     </style>
-    <script></script>
+    <script>
+        $(document).ready(function(){
+            $('.outer-menu-item').hover(function(){
+                $(this).find('.inner-menu').show();
+            },function(){
+                $(this).find('.inner-menu').hide();
+            });
+        });
+    </script>
     <script></script>
 </head>
 <body>
@@ -195,39 +203,46 @@
         <div id="top-bar">
             <header id="main-header">
                 <hgroup>
-                    <h1 class="master-title">HTML5 Example Preview</h1>
-                    <h2 class="master-description">한빛아카데미</h2>
+                    <h1 class="master-title">수업내용정리</h1>
+                    <h2 class="master-description">201835660 박예은</h2>
                 </hgroup>
             </header>
             <nav id="main-navigation">
                 <div class="pull-left">
                     <ul class="outer-menu">
                         <li class="outer-menu-item">
-                            <span class="menu-title">HTML5</span>
+                            <span class="menu-title">파이썬</span>
                             <ul class="inner-menu">
-                                <li class="inner-menu-item"><a href="#">데이터</a></li>
-                                <li class="inner-menu-item"><a href="#">데이터</a></li>
+                                <li class="inner-menu-item"><a href="#">제어문</a></li>
+                                <li class="inner-menu-item"><a href="#">함수</a></li>
+                                <li class="inner-menu-item"><a href="#">GUI</a></li>
                             </ul>
                         </li>
                         <li class="outer-menu-item">
-                            <span class="menu-title">CSS3</span>
+                            <span class="menu-title">웹프로그래밍</span>
                             <ul class="inner-menu">
-                                <li class="inner-menu-item"><a href="#">데이터</a></li>
-                                <li class="inner-menu-item"><a href="#">데이터</a></li>
-                                <li class="inner-menu-item"><a href="#">데이터</a></li>
+                                <li class="inner-menu-item"><a href="#">HTML</a></li>
+                                <li class="inner-menu-item"><a href="#">CSS</a></li>
+                                <li class="inner-menu-item"><a href="#">JAVASCRIPT</a></li>
+    
                             </ul>
                         </li>
                         <li class="outer-menu-item">
-                            <span class="menu-title">JavaScript</span>
+                            <span class="menu-title">알고리즘</span>
                             <ul class="inner-menu">
-                                <li class="inner-menu-item"><a href="#">데이터</a></li>
-                                <li class="inner-menu-item"><a href="#">데이터</a></li>
-                                <li class="inner-menu-item"><a href="#">데이터</a></li>
-                                <li class="inner-menu-item"><a href="#">데이터</a></li>
-                                <li class="inner-menu-item"><a href="#">데이터</a></li>
-                                <li class="inner-menu-item"><a href="#">데이터</a></li>
-                                <li class="inner-menu-item"><a href="#">데이터</a></li>
-                                <li class="inner-menu-item"><a href="#">데이터</a></li>
+                                <li class="inner-menu-item"><a href="#">정렬</a></li>
+                                <li class="inner-menu-item"><a href="#">트리</a></li>
+                                <li class="inner-menu-item"><a href="#">집합</a></li>
+                                <li class="inner-menu-item"><a href="#">동적프로그래밍</a></li>
+            
+                            </ul>
+                        </li>
+                        <li class="outer-menu-item">
+                            <span class="menu-title">선형대수</span>
+                            <ul class="inner-menu">
+                                <li class="inner-menu-item"><a href="#">Determinants</a></li>
+                                <li class="inner-menu-item"><a href="#">Gram―Schmidt Process</a></li>
+                                <li class="inner-menu-item"><a href="#">Eigenvalues and Eigenvectors</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -247,8 +262,8 @@
                 
                 <article id="art1">
                     <div class="article-header">
-                        <h1 class="article-title">HTML5 개요와 활용1</h1>
-                        <p class="article-date">2013년 02월 14일</p>
+                        <h1 class="article-title">웹프로그래밍</h1>
+                        <p class="article-date">2022년 02월 14일</p>
                     </div>
                     <div class="article-body">
                         <img src="http://via.placeholder.com/430x280" />

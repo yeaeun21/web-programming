@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Slider</title>
@@ -10,12 +10,10 @@
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <script>
         $(document).ready(function () {
-            // 변수를 선언합니다.
             var width = $('[data-role="slider"]').attr('data-width');
             var height = $('[data-role="slider"]').attr('data-height');
             var count = $('[data-role="slider"] div.item').length;
             
-            // 스타일을 적용합니다.
             $('[data-role="slider"]').css({
                 position: 'relative',
                 overflow: 'hidden',
@@ -30,24 +28,20 @@
                 height: height,
                 float: 'left'
             });
-            // 변수를 선언합니다.
             var currentPage = 0;
             var changePage = function () {
                 $('[data-role="slider"] > .container').animate({
                     left: -currentPage * width
                 }, 500);
             };
-            // 이벤트를 연결합니다.
             $('#left-button').click(function () {
                 if (currentPage > 0) {
-                    // 왼쪽으로 이동
                     currentPage = currentPage - 1;
                     changePage();
                 }
             });
             $('#right-button').click(function () {
                 if (currentPage < count - 1) {
-                    // 오른쪽으로 이동
                     currentPage = currentPage + 1;
                     changePage();
                 }

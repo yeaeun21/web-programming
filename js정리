@@ -1,0 +1,331 @@
+<9장 자바스크립트 기본 문법>
+-js기본용어
+표현식-값을 만들어 내는 간단한 코드
+문장-프로그래밍 언어에 실행할 수 있는 코드의 최소 단위
+종결-문장 마지막에 세미콜론 또는 줄 바꿈
+키워드-js 처음 만들 때 정해진 특별한 의미가 부여된 단어(if,else,break 등)
+식별자-js에서 변수나 함수 등에 이름을 붙일 때 사용하는 단어
+-생성자 함수 이름 대문자 시작, 변수/인스턴스/함수/메서드 소문자로 시작,각 단어 첫글자 대문자
+ 
+주석-프로그램 진행에 전혀 영향을 주지 않는 코드로, 프로그램을 설명하는 데 사용
+	한행- //주석문
+	여러행- /* 주석 주석*/
+기본출력
+alert(“메시지”)
+
+-js기본 자료형과 연산자를 사용하는 방법
+자료형
+-숫자(0으로 나눌 시 무한 infinity)
+-문자열
+ 
+-볼(bool) 참 거짓판별
+-비교연산자 
+-논리연산자: !(부정-참>거짓,거짓>참) &&(곱-둘 다 참) ||(합-둘 중 하나 참)
+변수 선언: var pi;
+변수 초기화: pi=3.14 
+
+-조건문과 반복문을 사용해 js흐름 제어 방법
+조건문
+-if조건문 , if else, 
+
+ 
+
+-함수를 선언하고 호출하는 방법
+함수-코드집합을 나타내는 자료형
+익명함수생성-함수이름을 입력하지 않고 만들기 
+fuction () {  }
+ex)
+var 함수=function (){
+	alert(‘a’);
+	alert(‘b’);
+};
+alert(typeof(함수)+”:”+함수); //함수 내용text 출력
+함수(); //함수 호출
+선언적 함수 생성-함수 이름을 입력해서 만들기
+function 함수 () { }
+ex)
+function 함수(){
+	alert(‘a’);
+	alert(‘b’);
+};
+alert(typeof(함수)+”:”+함수); //함수 내용text 출력
+함수(); //함수 호출
+*선언적 함수와 익명 함수 함께사용시 선언적 함수를 먼저 읽음 후에 익명함수. 
+-> a,b있고 b가 선언적 함수면 b>a순서이므로 a 출력. 
+매개변수: 함수의 괄호 안에 집어넣어 함수 쪽에 추가적인 정보를 전달하는 것
+function 함수이름 (매개변수, 매개변수){ 
+함수코드
+함수코드
+return 반환 값;
+}
+콜백함수(매개변수로 전달되는 함수)
+    <script>
+        var callback= function() {
+                alert("안녕모두들안녕");}
+                
+        function 함수(callback){
+            for(var i=0;i<=10;i++){
+                callback();
+            };
+        }
+        함수(callback);
+    </script>
+
+-객체의 기본 개념 이해, 속성과 메서드를 구분
+객체는 자료형 여러 개를 한 번에 저장함
+배열-인덱스, 객체- 키
+var product={
+	제품명: ‘7d 건조 망고’,
+	유형: ‘당절임’
+}
+product[‘제품명’]=>’건조망고’
+or
+product.제품명=>’건조망고’
+
+for in 반복문
+for (var 키 in 객체){
+문장}
+for (var i in product){
+	alert(i+’:’+product[i]);
+}
+요소(element): 배열에 있는 값 하나하나
+속성(property): 객체에 있는 값 하나하나
+this키워드: 자신이 가진 속성 표시
+        var person={
+            name:'김범석',
+            eat:function (food){
+                alert(this.name+"이"+food+"를 먹음");
+            }
+        }
+        person.eat('밥');
+
+<10장 문서 객체 모델>
+문서 객체와 문서 객체 모델의 개념
+문서 객체: 태그를 자바스크립트에서 사용할 수 있는 객체로 만든 것
+문서 객체 조작=태그 조작(태그 추가,수정,제거)
+문서 객체 모델
+- 요소 노드: <h1>태그와 <script>태그처럼 요소를 생성하는 노드
+-텍스트 노드: 화면에 출력되는 문자열, 컨텐츠 노드
+-정적 생성: 웹 페이지를 처음 실행할 때 HTML태그로 적힌 문서 객체를 생성하는 것
+-동적 생성: 웹 페이지를 실행 중에 자바스크립트를 사용해 문서 객체를 생성하는 것
+-문서 객체 모델 Document Object Model, DOM: 웹브라우저가 HTML파일을 분석하고 출력하는 방식
+실행순서(위->아래)에 따른 문서 객체 사용 오류
+=>해결방안
+1. script 태그 위치를 <h1>밑으로 옮김
+2. 이벤트 활용하기 
+window.onload=function(){
+	변경문장 };
+문서객체를 선택 및 조작
+문서 객체를 선택한다
+= 이미 존재하는 HTML 태그를 자바스크립트에서 문서 객체로 변환하는 것
+ 
+1.	getElementById() 
+    window.onload=function(){
+        var header=document.getElementById('header'); //문서객체 선택
+        header.style.color='orange'; //문서객체 조작
+        header.innerHTML='From JavaScript' //태그내부를 의미하는 속성
+    }
+
+(1) 태그를 객체로 읽어오기: 태그객체=메소드()
+(2) 태그의 속성과 값: 태그객체.속성=값
+
+2.	querySelector() -h1중에 한 개만 적용됨
+var header=document.querySelector(‘h1’)
+
+3.	querySelectorAll() - h1전부 적용됨
+var headers=document.querySelectorAll(‘h1’); //배열형태
+for(var i=0; i<headers.length; i++){		
+     var header=headers[i];
+    문서객체조작문장}
+
+글자조작
+글자 속성: 문서 객체 내부에 있는 글자를 조작할 때 사용
+ 
+
+내부 글자 변경
+-	document.body.textContent= output; 
+              
+-	document.body.innerHTML=output;
+               
+스타일조작
+자바스크립트는 -를 인식못해서
+background-color 는 backgroundColor로 변경(-를 대문자로 변경)
+속성조작
+웹표준에서 지정하지 않은 속성에 접근할 때 사용
+ 
+setAttribute(‘data-custom’,’value’);
+var dataCustom=document.body.getAttribute(‘data-custom’);
+alert(dataCustom);
+ 
+setInterval (function(){},주기 시간)함수실행
+이벤트 종류, 문서 객체에 이벤트 연결
+이벤트 용어 
+-	이벤트 속성(event property): onload
+-	이벤트 이름(event name)또는 이벤트 타입(event type): on을 제외한 load
+-	이벤트 리스너(event listener) 또는 이벤트 핸들러(event handler): 이벤트 속성에 넣는 함수
+이벤트 연결
+-	이벤트 모델(event model): 문서 객체에 이벤트를 연결하는 방식
+ 
+
+1.	인라인 이벤트 모델 사용
+<body>안에 <button onclick=”alert(‘click’)>버튼</button>
+2.	script태그에 인라인 이벤트 모델 사용
+<script>안에 function buttonClick(){
+			alert(‘click’);
+		}
+	*고전이벤트모델(과거)
+	window.onload=function(){
+		var button = document.getElementById(‘button’);
+		button.onclick=function(){
+			alert(‘click’); // return false;하면 기본이벤트 제거
+		};
+	};
+	<body>
+		<a id=”button” href=”http:hanbit.co.kr”>버튼</a>
+-	기본 이벤트(default event): 특정 태그가 가진 기본적인 이벤트
+
+<11장 jQuery라이브러리>
+▪ HTML 페이지에 jQuery 라이브러리를 추가
+ ▪ jQuery 라이브러리를 사용해 문서 객체를 조작
+기본형태:
+$(선택자).메서드(매개변수, 매개변수)
+$(document).ready(function(){
+	$(‘h1’).css(‘color’,’red’);});
+속성조작
+attr(): 문서 객체의 속성 조작
+$(document).ready(function(){
+	var src=$(‘script’).attr(‘src’); //스크립트 선택자에 있는 src 출력
+	alert(src);
+}); 
+1.	속성 값을 입력해 속성지정
+<script>안에 
+$(document).ready(function(){
+	
+$(‘img’).attr(‘width’,’100’); //img태그에 있는 attr속성지정}
+2.	객체를 입력해 속성 지정
+<script>안에
+ $(document).ready(function(){
+	$(‘img’).attr({width:100});
+
+3.	함수를 이용해 속성 지정
+$(document).ready(function(){
+$(‘img’).attr({
+	src: function(index){
+		var size=(index+1)*100 ;
+		return size}
+*$(‘img’).attr()의 실행과정
+1. $(‘img’)함수가 실행이 되면 세 개의 img태그 객체가 배열에 저장이 되고 배열이 객체화 되어 반환됨.
+2. attr()함수가 실행 되는데 attr()함수의 내부에서는 반복문이 돌아가며 각 태그 객체의 속성에 값을 할당한다.
+*메소드 체이닝 : 문서 객체 조작 메소드 여러 번 사용 가능
+// 이벤트를 연결합니다. 
+$(document).ready(function () { 
+// 속성을 지정합니다. 
+$('img').attr('alt', 'jQuery 속성 지정').attr('src', 'http://placehold.it/100x100').attr('width', '100'); });
+
+스타일 조작
+.css()메서드 사용
+1.	속성 값 입력으로 속성지정
+ 
+2.	객체 입력 속성 지정
+ 
+3.	함수 이용 속성 지정
+ 
+글자 조작
+ 
+ 
+읽어올 때 html 메소드는 첫번째 객체만 읽고
+text메소드는 모두 읽어옴
+
+클래스 조작
+띄어쓰기로 구분해 문서 객체의 class속성 값을 여러 개 입력가능
+ 
+ 
+*hover()메서드: 마우스 커서를 올리거나 내릴 때 동작실행
+ 
+*ready() 메서드 – ready 이벤트(문서 객체 준비 완료 이벤트)가 연결
+ 
+간단한 이벤트 연결 방식
+$(selector).method(function(event) {});
+ 
+this: 이벤트 리스너 내부에서 이벤트를 발생한 자기 자신
+이벤트 사용
+jQuery로 일반 이벤트 연결( 위에서 .click()있는데 on쓰는이유는 업뎃못한 이벤트는 사용안돼서) 
+ 
+-	on() 메서드
+ 
+1.	
+ 
+2.	
+ 
+이벤트 사용
+ 
+event.preventDefault(); //기본 이벤트 제거
+*유효성검사
+ 
+
+▪ jQuery 라이브러리를 사용해 문서 객체에 효과를 부여 
+시각효과 메서드
+-속도 매개변수 입력 가능, 입력안하면 기본값 500밀리초 +-100
+ 
+ 
+애니메이션효과
+-	animate() 메서드
+1.	$(selector).animate(속성 객체);
+2.	$(selector).animate(속성 객체, 시간);
+3.	$(selector).animate(속성 객체, 시간, 콜백 함수);
+ 
+-	애니메이션 예약
+1.	animate() or delay()
+2.	정지
+ 
+(1)	delay(): 애니메이션을 특정시간만큼 정지
+	 
+	(2) stop(): 매개변수로 숫자를 입력한 delay()와 달리 불을 입력
+	 
+-	애니메이션 효과
+(1)	clearQueue 매개변수의 기본 값
+-false: 현재 실행 중인 애니메이션만 멈춤
+-true:예약된 모든 애니메이션을 제거
+(2)	goToEnd 매개변수: 애니메이션을 중지할 때 어떤 상태로 종료할지 결정
+▪ jQuery 플러그인을 활용
+
+
+
+
+
+
+
+
+
+
+
+
+자바스크립트의 타이머 함수를 알아봅니다. 
+특정 시간마다 코드 실행
+-	타이머 함수
+ 
+-	실시간 검색어
+: setInterval()함수 사용
+jq문서 객체 추가 메서드
+ 
+ 
+ 
+ 
+ 
+무한스크롤
+-	생성 개요 
+(1)	스크롤 이벤트가 발생
+(2)	 
+(3)	전체 문서의 높이(document.height)가 스크롤 높이(window.scrollTop)와 웹브라우저 창의 높이(window.height)를 더한 값과 같은지 조건 확인
+document.height = window.scrollTop + window.height
+ 
+(4)	이 조건을 충족할 때만 데이터를 추가
+갤러리
+왼쪽과 오른쪽에 있는 버튼을 이용해서 콘텐츠를 왼쪽과 오른쪽으로 이동할 수 있는 요소
+1.	html페이지 만들기
+2.	body태그 구성하기
+3.	갤러리 구분 색상 적용하기
+4.	갤러리 스타일 적용하기
+5.	갤러리 이벤트 연결하기
+6.	갤러리 클릭 이벤트 구현하기
+7.	실행하기

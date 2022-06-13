@@ -2,15 +2,21 @@
 <html>
 <head>
     <script>
-    window.onload=function(){
-        var header=document.getElementById('header'); //문서객체 선택
-        header.style.color='orange'; //문서객체 조작
-        header.innerHTML='From JavaScript' //태그내부를 의미하는 속성
-    }
+        window.onload=function(){
+            var headers=document.querySelectorAll('h1');
+            //태그내부를 의미하는 속성
 
+            for(var i=0;i<headers.length;i++){
+                header=headers[i];
+                header.style.color='orange'; //문서객체 조작
+                header.innerHTML="javascript";
+            }
+        }
     </script>
 </head>
 <body>
-    <h1 id="header">dd</h1>
+    <h1>ddd</h1>
+    <h1>ddd</h1>
+    <h1>ddd</h1>
 </body>
 </html>

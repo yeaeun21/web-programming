@@ -3,16 +3,12 @@
 <head>
     <title>Traditional Event - Default Event</title>
     <script>
-        window.onload=function(){
-            var button=document.getElementById('button');
-
-            button.onclick=function(){ //기본이벤트 제거
-                return false;
-            }
+        function buttonClick(){
+            alert('click');
         }
     </script>
 </head>
 <body>
-    <a id="button" href="http://hanbit.co.kr">버튼</a>
+    <button onclick="buttonClick()">버튼</button>
 </body>
 </html>

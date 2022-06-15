@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Frame Animation</title>
+    <script src="http://code.jquery.com/jquery-3.4.1.js"></script>
+    <style>
+       body{
+        margin: 0 auto;
+        width:fit-content;
+        }
+    </style>
+    <script>
+        
+        function left(){
+            var count = 0;
+            var thank = document.getElementById('thx');
+            var left = [
+                '사합니다감',
+                '합니다감사',
+                '니다감사합',
+                '다감사합니',
+                '감사합니다'
+            ];
+            // 타이머 반복
+            let cycle=setInterval(function () {
+                thank.textContent = left[count % left.length];
+                count = count + 1;
+            }, 1000 / 5);
+            //stop버튼 누르면 타이머 중지
+            $('#stop-button').click(function(){
+                clearInterval(cycle);
+            });
+           
+        }
+        function right(){
+            var count = 0;
+            var thank = document.getElementById('thx');
+            var right = [
+                '다감사합니',
+                '니다감사합',
+                '합니다감사',
+                '사합니다감',
+                '감사합니다'
+            ];
+            // 타이머 반복
+            let cycle=setInterval(function () {
+                thank.textContent = right[count % right.length];
+                count = count + 1;
+            }, 1000 / 5);
+            //stop버튼 누르면 타이머 중지
+            $('#stop-button').click(function(){
+                clearInterval(cycle);
+            });
+        }
+    </script>
+</head>
+<body>
+    <p id="thx">감사합니다</p> 
+    <button id="left-button" onclick="left();">left</button>
+    <button id="right-button" onclick="right();">right</button>
+    <button id="stop-button" >stop</button>
+</body>
+</html>
